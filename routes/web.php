@@ -1,5 +1,8 @@
 <?php
 
+use App\Categorie;
+use App\Infocategorie;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,15 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('admin', function () {
+    $category=Categorie::all();
+    $info_categorie=Infocategorie::all();
+
+
+    // dump($category);
+    return view('create',compact('category','info_categorie'));
 });
 
 Auth::routes();

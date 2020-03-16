@@ -2,16 +2,19 @@
 
 @section('content')
 
-<br>
-        <br>
+    <br>
+    <br>
+    <center>
+        <h1 id="test" >
+            Ia'ora na !
+        </h1>
+    </center>
 
-        <h1 id="test" >test</h1>
-
-        <center>
+    <center>
         <div id="map">
                 <!-- Ici s'affichera la carte -->
         </div>
-        </center>
+    </center>
 
         <br>
         <br>
@@ -51,94 +54,10 @@
                     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-                    <form method="POST" action="{{route('create_categorie')}}">
-                            {{csrf_field()}}
-                            <input type="text" name="nom" id="" placeholder="Nom">
 
-                            <button type="submit">Valider</button>
-                        </form>
-
-                        <form method="POST" action="{{route('create_info')}}">
-                            {{csrf_field()}}
-                            <input type="text" name="nom" placeholder="Nom">
-                            <input type="text" name="prenom" placeholder="Prénom">
-                            <input type="text" name="description" placeholder="Description">
-                            <input type="float" name="lon" placeholder="Longitude">
-                            <input type="float" name="lat" placeholder="Latitude">
-
-                            <select name="categorie_id">
-                                @foreach($errors as $item)
-
-                                    <option value=" {{ $item['id'] }} ">
-                                        {{ $item['nom'] }}
-                                    </option>
-
-                                @endforeach
-                            </select>
-
-                            <button type="submit">Valider</button>
-                        </form>
-
-                        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-<table class="table">
-        <thead>
-          <tr>
-
-            <th scope="col">categorie_id</th>
-            <th scope="col">action</th>
-
-          </tr>
-        </thead>
-        <tbody>
-            @foreach ($info_categorie ?? '' as $item)
-                <tr>
-
-                    <td>
-                        {{ $item['id'] }}
-                        {{ $item['categorie_id'] }}
-                    </td>
-                    <td>
-
-                        <form method="POST" action="{{route('delete')}}">
-
-                                {{ csrf_field() }}
-
-                            <input type="hidden" name="categorie_id" value="{{ $item['id'] }}">
-                            <button type="submit">
-                                Supprimer
-                            </button>
-
-                        </form>
-
-                        <form method="POST" action="{{route('update')}}">
-
-                            {{ csrf_field() }}
-
-                        <input type="text" name="categorie_id" value="{{ $item['categorie_id'] }}">
-                        <input type="text" name="info_id" value="{{ $item['info_id'] }}">
-                        <input type="hidden" name="infocategorie_id" value="{{ $item['id'] }}">
-                        <button type="submit">
-                            update
-                        </button>
-
-                    </form>
-
-                    </td>
-                </tr>
-            @endforeach
-
-
-        </tbody>
-      </table>
-
-
-            </div>
         </div>
-        </div>
+    </div>
+</div>
 
 
 
