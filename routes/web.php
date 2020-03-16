@@ -28,3 +28,6 @@ Route::post('delete','CategorieController@nwdelete')->name('delete');
 Route::post('update','InfoController@nwupdate')->name('update');
 
 Route::get('home/jointure', 'InfocategorieController@get_infocategorie')->name('jointure');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

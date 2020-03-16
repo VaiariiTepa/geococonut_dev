@@ -21,7 +21,6 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * 
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
@@ -29,7 +28,7 @@ class HomeController extends Controller
             //Je déclare une variable $category
             //Je récupère toutes les données dans ma table Categorie
             //J'affecte category::all()
-            //Dans ma variable $category 
+            //Dans ma variable $category
             $category=Categorie::all();
             $info_categorie=Infocategorie::all();
 
@@ -37,5 +36,4 @@ class HomeController extends Controller
             // dump($category);
         return view('home',compact('category','info_categorie'));
     }
-
 }
