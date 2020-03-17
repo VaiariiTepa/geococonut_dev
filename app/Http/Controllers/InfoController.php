@@ -15,7 +15,7 @@ class InfoController extends Controller
         $description=$_POST['description'];
         $lon=$_POST['lon'];
         $lat=$_POST['lat'];
-        $categorie_id=$_POST['categorie_id'];
+        // $categorie_id=$_POST['categorie_id'];
 
         //J'alimente ma table info
         $info->nom=$nom;
@@ -28,12 +28,12 @@ class InfoController extends Controller
         $info->save();
 
         //je récupère le id de "info"
-        $id=$info->id;
+        // $id=$info->id;
 
-        //j'enregistre les "id" dans "infocategorie"
-        $infocategorie->categorie_id = $categorie_id;
-        $infocategorie->info_id = $id;
-        $infocategorie->save();
+        // //j'enregistre les "id" dans "infocategorie"
+        // $infocategorie->categorie_id = $categorie_id;
+        // $infocategorie->info_id = $id;
+        // $infocategorie->save();
 
         return back();
 

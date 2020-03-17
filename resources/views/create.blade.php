@@ -207,7 +207,7 @@
             </form>
             <br>
 
-            <form method="POST" action="{{route('update')}}">
+            <form method="POST" action="{{route('create_info')}}">
 
                 {{ csrf_field() }}
 
